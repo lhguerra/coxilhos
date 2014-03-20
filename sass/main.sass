@@ -1,0 +1,36 @@
+
+// Variables
+@import ../sass/_variables
+
+// Mixins
+@import ../sass/_mixins
+
+// General Styles
+*
+  box-sizing: border-box
+
+body
+  font-size: 16px
+  margin: 0
+  padding: 0
+
+// Text Styles
+h1
+  font-size: 3em
+  span
+    font-size: 2rem
+
+// Header Styles
+header#main-header
+  +flexbox
+  flex-flow: row
+  align-items: stretch
+  justify-content: center
+  height: 100vh
+  article
+    text-align: center
+    background-color: gray
+    flex-grow: 3
+  aside
+    background-color: black
+    flex-grow: 2
