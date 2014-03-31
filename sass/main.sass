@@ -20,12 +20,14 @@ body
 h1
   font-size: 3em
   font-weight: 700
+  margin: 0
   span
     font-size: 2rem
 
 h2
   font-size: 2em
   font-weight: 700
+  margin: 0
 
 h3
   font-size: 1.5em
@@ -43,22 +45,29 @@ header#main-header
   height: 100vh
   color: $brown
   width: 100%
+  background-image: url(../images/header-bg.jpg)
+  background-size: cover
   article
+    +flexbox
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    padding-bottom: 100px
     text-align: center
-    background-color: $white
+    background-color: adjust-color($white, $alpha: -0.4)
     flex-grow: 3
     flex-shrink: 3
     #learn-more
       position: relative
       border-radius: 8px
-      padding: 10px 20px 20px 20px
+      padding: 10px 20px 30px 20px
       color: $white
       font-size: 2em
       background-color: $light-orange
       border-bottom: 5px solid $brown
       &:after
         position: absolute
-        top: 55px
+        top: 60px
         left: 50%
         margin-left: -11px
         content: ''
@@ -73,15 +82,72 @@ header#main-header
         border-bottom: 3px solid $brown
         margin-bottom: -2px
   aside
-    background-color: $beige
+    background-color: adjust-color($beige, $alpha: -0.4)
     flex-grow: 1
     flex-shrink: 1
     flex-direction: row
     h2
-      margin: 40px
+      padding: 20px 40px 20px 40px
     form
-      > *
-        display: block
+      div
+        padding: 5px 20px
+        input, textarea
+          width: 100%
+          border: none
+          background-color: $white
+          padding: 5px
+          font-family: $main-font
+
+// Main Content Styles
+section
+  padding-bottom: 88px
+  background-color: $brown
+  color: $white
+  text-align: center
+  h2
+    padding: 40px 40px 0 40px
+  h3
+    padding: 0 40px 40px 40px
+
+// Slider Styles
+.jcarousel
+  position: relative
+  overflow: hidden
+  background-color: rgba(0,0,0,0.4)
+  ul
+    width: 20000em
+    position: relative
+    list-style: none
+    margin: 0 25vw
+    padding: 0 25vw
+    li
+      float: left
+      width: 50vw
+      text-align: center
+      &:last-child
+        padding-right: 50vw
+      img
+        max-height: 50vh
+  .controls
+    position: absolute
+    padding: 10px 0
+    left: 0
+    bottom: 5px
+    background-color: rgba(0,0,0,0.4)
+    width: 100%
+    text-align: center
+    a
+      margin: 3px
+      padding: 0 20px
+      background-color: $white
+      border-radius: 50%
+      font-size: 3em
+      border-bottom: 2px solid $brown
+      border-right: 2px solid $brown
+      color: $brown
+      transition: $transition
+      &:hover
+        background-color: $beige
 
 // Footer Styles
 footer
@@ -92,10 +158,30 @@ footer
   background-color: $brown
   color: $white
   z-index: 150
+  padding: 10px
   article
     h3
       padding-bottom: 0
-      margin-bottom: 0
+      margin: 0
     p
       margin-top: 0
       padding-top: 0
+
+
+// Media Queries
+@media (max-width: 800px)
+  header#main-header
+    display: block
+    height: auto
+  .jcarousel
+    ul
+      margin: 0 0
+      padding: 0 0
+      li
+        width: 100vw
+        &:last-child
+          padding-right: 0
+  footer
+    position: static
+    padding: 5%
+    width: 90%
