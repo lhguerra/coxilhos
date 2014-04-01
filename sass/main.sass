@@ -67,7 +67,7 @@ header#main-header
       border-bottom: 5px solid $brown
       &:after
         position: absolute
-        top: 60px
+        top: 65px
         left: 50%
         margin-left: -11px
         content: ''
@@ -80,7 +80,7 @@ header#main-header
       &:hover
         background-color: $dark-orange
         border-bottom: 3px solid $brown
-        margin-bottom: -2px
+        margin-top: 2px
   aside
     background-color: adjust-color($beige, $alpha: -0.4)
     flex-grow: 1
@@ -97,6 +97,20 @@ header#main-header
           background-color: $white
           padding: 5px
           font-family: $main-font
+      .form-fields
+        height: 420px
+        overflow: hidden
+        transition: $transition
+      .form-sent
+        height: 0
+        overflow: hidden
+        transition: $transition
+        text-align: center
+    .submitted
+      .form-fields
+        height: 0
+      .form-sent
+        height: 420px
 
 // Main Content Styles
 section
