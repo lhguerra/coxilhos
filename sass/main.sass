@@ -1,9 +1,11 @@
-
 // Variables
 @import ../sass/_variables
 
 // Mixins
 @import ../sass/_mixins
+
+// Keyframes
+@import ../sass/_keyframes
 
 // General Styles
 *
@@ -33,6 +35,10 @@ h3
   font-size: 1.5em
   font-weight: 700
 
+h4
+  font-size: 1.2em
+  font-weight: 700
+
 a
   text-decoration: none
 
@@ -47,6 +53,10 @@ header#main-header
   width: 100%
   background-image: url(../images/header-bg.jpg)
   background-size: cover
+  -webkit-animation: header_bg 200s infinite alternate
+  -moz-animation:    header_bg 200s infinite alternate
+  -o-animation:      header_bg 200s infinite alternate
+  animation:         header_bg 200s infinite alternate
   article
     +flexbox
     flex-direction: column
@@ -140,6 +150,7 @@ section
       text-align: center
       img
         max-height: 70vh
+        max-width: 100%
   .controls
     position: absolute
     padding: 10px 0

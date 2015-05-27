@@ -1,5 +1,5 @@
 // Caroussel Script
-$(function() {
+$(function() {    
     $('.jcarousel').jcarousel({
         // Configuration goes here
     });
@@ -11,6 +11,23 @@ $(function() {
     $('.jcarousel-next').jcarouselControl({
         target: '+=1'
     });
+});
+
+// Caroussel Key Listener
+$(document).keypress(function( event ) {
+  if (event.keyCode == 37 || event.keyCode == 39) {
+
+    switch (event.keyCode) {
+      case 39:
+        direction = '+=1';
+        break;
+      case 37:
+        direction = '-=1';
+        break;
+    }
+
+    $('.jcarousel').jcarousel('scroll', direction);
+  }
 });
 
 // Form Scripts
