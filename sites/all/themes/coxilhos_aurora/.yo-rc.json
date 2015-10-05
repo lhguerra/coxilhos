@@ -1,0 +1,16 @@
+{
+  "generator-drupal-theme": {
+    "projectName": "coxilhos_aurora",
+    "projectSlug": "coxilhos_aurora",
+    "baseTheme": "aurora",
+    "baseThemeSettings": {
+      "auroraType": "aurora"
+    },
+    "sassDir": "sass",
+    "cssDir": "css",
+    "jsDir": "js",
+    "imgDir": "img",
+    "fontsDir": "fonts",
+    "templateDir": "templates"
+  }
+}

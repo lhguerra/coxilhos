@@ -1,0 +1,30 @@
+name = coxilhos_aurora
+description =  coxilhos_aurora theme.
+core = 7.x
+base theme = aurora
+
+; ========================================
+; Regions
+; ========================================
+
+regions[header]       = 'Header'
+regions[main_prefix]  = 'Main Region Prefix'
+regions[content]      = 'Main Region'
+regions[main_suffix]  = 'Main Region Suffix'
+regions[footer]       = 'Footer'
+
+; ========================================
+; Stylesheets
+; ========================================
+
+stylesheets[all][] = 'css/main.css'
+
+; ========================================
+; Scripts
+; ========================================
+
+; ========================================
+; Modernizr
+; ========================================
+
+modernizr[tests][] = css_boxsizing
