@@ -77,10 +77,6 @@
   <?php print render($page['main_prefix']); ?>
 <?php endif; ?>
 
-<?php if ($page['sidebar_first']): ?>
-    <?php print render($page['sidebar_first']); ?>
-<?php endif; ?>
-
 <?php if ($page['content']): ?>
   <main id="main" role="main">
     <?php print render($page['content']); ?>
