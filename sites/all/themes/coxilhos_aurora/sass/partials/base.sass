@@ -1,7 +1,19 @@
 body
+  +font('big')
   background-color: $brown
   color: $white
   font-family: $font-text
+  margin: 0
+
+  +breakpoint($smallest-width)
+    +font(smaller)
+
+h2
+  font-size: $font-size-h2
+  color: $beige
 
 label
   line-height: 2
+
+img
+  max-width: 100%

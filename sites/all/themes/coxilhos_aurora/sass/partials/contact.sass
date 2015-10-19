@@ -5,11 +5,29 @@
   .description
     line-height: 2
 
+  br.hidden
+    display: none
+
+  +breakpoint($big-width)
+    +span(isolate 16 at 5)
+
+  +breakpoint($medium-width)
+    br.hidden
+      display: block
+
+  +breakpoint($small-width)
+    +span(isolate 18 at 4)
+
+  +breakpoint($smallest-width)
+    +span(isolate 20 at 3)
+
 input, textarea
   background-color: $white
+  color: $brown
   border: none
   padding: 1em
-  color: $brown
+  max-width: 100%
+  box-sizing: border-box
 
 #edit-submit
   background-color: $light-orange
@@ -17,3 +35,9 @@ input, textarea
 
 .form-required
   color: $beige
+
+.pre-instructions
+  font-size: $font-size-h3
+
+  +breakpoint($smallest-width)
+    font-size: $font-size-h4
