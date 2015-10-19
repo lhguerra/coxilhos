@@ -17,3 +17,15 @@ label
 
 img
   max-width: 100%
+
+#main
+  +span(isolate 14 at 6)
+
+  +breakpoint($big-width)
+    +span(isolate 16 at 5)
+
+  +breakpoint($small-width)
+    +span(isolate 18 at 4)
+
+  +breakpoint($smallest-width)
+    +span(isolate 20 at 3)
