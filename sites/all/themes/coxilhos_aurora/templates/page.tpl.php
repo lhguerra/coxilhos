@@ -74,7 +74,7 @@
         <img src="<?= $directory . '/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
       </a>
     </h1>
-    <h2>Churrasco a domicílio.</h2>
+    <!-- <h2>Churrasco a domicílio.</h2> -->
   </div>
 </header>
 
