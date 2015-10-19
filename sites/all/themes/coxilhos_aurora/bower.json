@@ -11,7 +11,8 @@
   "dependencies": {
     "eq.js": "~1.4.1",
     "borealis": "~1.0.1",
-    "susy": "~2.2.6"
+    "susy": "~2.2.6",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1"
   },
   "devDependencies": {
     "north": "~0.2.0"
