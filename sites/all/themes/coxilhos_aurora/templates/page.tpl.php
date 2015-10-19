@@ -105,3 +105,5 @@
     <?php print render($page['footer']); ?>
   </footer>
 <?php endif; ?>
+
+<meta name="google-site-verification" content="WsZEws0aKPtfu7aVtPqPxFkot_c-NXnGEnXeOsXmSnA" />
