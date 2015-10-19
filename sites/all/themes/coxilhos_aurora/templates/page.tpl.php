@@ -71,7 +71,7 @@
   <div id='coxilhos-header-wrapper'>
     <h1>
       <a href="<?= $base_path ?>">
-        <img src="<?= $directory . '/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
+        <img src="<?= $base_path . 'sites/all/themes/coxilhos_aurora/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
       </a>
     </h1>
     <!-- <h2>Churrasco a domicílio.</h2> -->
