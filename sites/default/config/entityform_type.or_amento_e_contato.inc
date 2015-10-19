@@ -34,8 +34,8 @@ $data = entity_import('entityform_type', '{
       "resubmit_action" : "new",
       "redirect_path" : "",
       "instruction_pre" : {
-        "value" : "Entre em contato para pedir um or\\u00e7amento ou tirar suas d\\u00favidas. Use o formul\\u00e1rio abaixo ou o telefone 48 9933 0349.",
-        "format" : "filtered_html"
+        "value" : "Entre em contato para pedir um or\\u00e7amento ou tirar suas d\\u00favidas.\\r\\nUse o formul\\u00e1rio abaixo ou os telefones \\u003Cbr class=\\u0027hidden\\u0027\\u003E 48 9933 0349 \\/ 48 8834 2412.",
+        "format" : "full_html"
       }
     },
     "weight" : "0",
