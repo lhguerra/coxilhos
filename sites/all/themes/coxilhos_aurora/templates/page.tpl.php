@@ -106,4 +106,5 @@
   </footer>
 <?php endif; ?>
 
-<meta name="google-site-verification" content="WsZEws0aKPtfu7aVtPqPxFkot_c-NXnGEnXeOsXmSnA" />
+
+<meta name="google-site-verification" content="9wKZ6RB1J10wyjr-UHUtQKb0reP63vrSrPpVIiPvGJo" />
