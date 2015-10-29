@@ -5,6 +5,15 @@ body
   font-family: $font-text
   margin: 0
 
+  +breakpoint($big-width)
+    +font(medium)
+
+  +breakpoint($medium-width)
+    +font(medium)
+
+  +breakpoint($small-width)
+    +font(small)
+
   +breakpoint($smallest-width)
     +font(smaller)
 

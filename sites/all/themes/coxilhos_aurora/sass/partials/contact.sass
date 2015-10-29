@@ -5,8 +5,10 @@
   br.hidden
     display: none
 
-  +breakpoint($medium-width)
-    br.hidden
+    +breakpoint($medium-width)
+      display: block
+
+    +breakpoint($big-width)
       display: block
 
 input, textarea
