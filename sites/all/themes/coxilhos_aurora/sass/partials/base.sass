@@ -21,6 +21,13 @@ h2
   font-size: $font-size-h2
   color: $beige
 
+a
+  color: $light-orange
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
 label
   line-height: 2
 
@@ -38,3 +45,7 @@ img
 
   +breakpoint($smallest-width)
     +span(isolate 20 at 3)
+
+  .node-page
+    max-width: 700px
+    margin: 0 auto
