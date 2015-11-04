@@ -74,7 +74,7 @@
         <img src="<?= $base_path . 'sites/all/themes/coxilhos_aurora/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
       </a>
     </h1>
-    <!-- <h2>Churrasco a domicílio.</h2> -->
+    <h2>Churrasco a domicílio em Florianópolis - SC</h2>
   </div>
 </header>
 
