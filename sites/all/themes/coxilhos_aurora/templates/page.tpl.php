@@ -69,12 +69,12 @@
 
 <header id='coxilhos-header'>
   <div id='coxilhos-header-wrapper'>
-    <h1>
-      <a href="<?= $base_path ?>">
-        <img src="<?= $base_path . 'sites/all/themes/coxilhos_aurora/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
-      </a>
+    <a href="<?= $base_path ?>">
+      <img alt="Coxilhos logo" title="Coxilhos - Tradicional Churrasco Gaúcho" src="<?= $base_path . 'sites/all/themes/coxilhos_aurora/img/logo.png' ?>" alt="Coxilhos. Tradicional churrasco gaúcho a domicílio." />
+    </a>
+    <h1 title="Churrasco a domicílio em Florianópolis - SC">
+      Churrasco a domicílio em Florianópolis - SC
     </h1>
-    <h2>Churrasco a domicílio em Florianópolis - SC</h2>
   </div>
 </header>
 
@@ -105,6 +105,17 @@
     <?php print render($page['footer']); ?>
   </footer>
 <?php endif; ?>
+
+<footer id="coxilhos-footer">
+  <div id="coxilhos-footer-wrapper">
+    <p>
+      2015 - Coxilhos - Tradicional churrasco gaúcho a domicílio em Florianópolis - SC.
+    </p>
+    <p>
+      Entre em contato: 48 9933 0349 / 48 8834 2412.
+    </p>
+  </div>
+</footer>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
