@@ -4,9 +4,10 @@
 
 $tracked = array (
   'content_type.page' => '450b927c9dfae97ed134300a9521a0820a6891ca',
-  'field.entityform.field_email.or_amento_e_contato' => '2ff63b86f58eee83ac3f3767783e87f726bf041b',
+  'field.entityform.field_email.or_amento_e_contato' => '8f0c4a0e1ae51a0fbf014663be474fa676085413',
   'field.entityform.field_message.or_amento_e_contato' => '2926dafca77889235a0cf3e59e840509a11154ad',
-  'field.entityform.field_name.or_amento_e_contato' => '9634d91f59ee222ec33a8986a1348da5e3d9741d',
+  'field.entityform.field_name.or_amento_e_contato' => 'da24fba5898552fb19e9171b691c911ac022bd39',
+  'field.entityform.field_veggies.or_amento_e_contato' => 'dad3799ba678b75400339bc37f2a07a1168125ed',
   'field.node.body.page' => '75abcc847c15e02be63df5ea85f7ce8ded74c02f',
   'variable.field_bundle_settings_node__page' => '6f0227d20e9ccbfb8d8bc709af250dc51595c03f',
   'variable.node_options_page' => '0f9b92dc48f459a7bbbb49f6590776024004074a',
@@ -22,7 +23,9 @@ $tracked = array (
   'permission.edit_any_page_content' => '77763fb15b597a08264c9f675a0ae60804b20bb8',
   'permission.edit_own_page_content' => 'e1603d32df8a0df3b1f4f55fbef87afa0e047ce7',
   'context.all_pages' => 'cc42ce020a2e2ba02cfc75de7a346ef157c15638',
-  'entityform_type.or_amento_e_contato' => 'a9eeae38a93bd7504fe60eda4fd11e8dd6d44511',
+  'ds_field_settings.node|page|default' => '1938eb9326127092be18c08eb17a81e4687ebbbf',
+  'ds_layout_settings.node|page|default' => '069c41713bad82d9ae9f1a1993097cac822185bd',
+  'entityform_type.or_amento_e_contato' => '67bada4cfb53ca0d72b4cf5df011efceeab3228e',
 );
 
 
@@ -32,8 +35,11 @@ $modules = array(
   'node',
   'ctools',
   'context',
+  'ds',
   'entity',
   'entityform',
   'field_sql_storage',
   'text',
+  'list',
+  'options',
 );

@@ -92,9 +92,7 @@ $data = array(
   ),
 );
 
-$dependencies = array(
-  'entityform_type.or_amento_e_contato' => 'entityform_type.or_amento_e_contato',
-);
+$dependencies = array();
 
 $optional = array();
 
