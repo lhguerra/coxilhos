@@ -1,0 +1,43 @@
+.page-carnes #main
+  +span(isolate 16 at 5)
+
+  +breakpoint($big-width)
+    +span(isolate 18 at 4)
+
+  +breakpoint($small-width)
+    +span(isolate 20 at 3)
+
+  +breakpoint($smallest-width)
+    +span(isolate 22 at 2)
+
+.view-steaks
+  margin: 2rem 0
+  overflow: auto
+
+  ul
+
+    li
+      +span(6)
+      list-style: none
+      position: relative
+
+      +breakpoint($big-width)
+        +span(8)
+
+      +breakpoint($small-width)
+        +span(12)
+
+  img
+    width: 100%
+    height: auto
+
+  .views-field-title
+    background-color: $transluscent-brown
+    position: absolute
+    padding: 1rem
+    right: 0
+    bottom: 0
+    left: 0
+
+  a
+    color: $beige
