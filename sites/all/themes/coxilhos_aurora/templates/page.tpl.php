@@ -114,6 +114,7 @@
     <p>
       Entre em contato: 48 9933 0349 / 48 8834 2412.
     </p>
+    <a href="http://facebook.com/coxilhos/" class="facebook-page-icon"></a>
   </div>
 </footer>
 
