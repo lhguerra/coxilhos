@@ -43,7 +43,7 @@ $tracked = array (
   'context.all_pages' => 'cc42ce020a2e2ba02cfc75de7a346ef157c15638',
   'ds_field_settings.node|page|default' => '1938eb9326127092be18c08eb17a81e4687ebbbf',
   'ds_layout_settings.node|page|default' => '069c41713bad82d9ae9f1a1993097cac822185bd',
-  'views_view.steaks' => '56e7739b3b1f2c475865bdd71fea36412fd36511',
+  'views_view.steaks' => 'e56cfdb0d8becadda56621eacef267a6493caa8f',
   'entityform_type.or_amento_e_contato' => '67bada4cfb53ca0d72b4cf5df011efceeab3228e',
 );
 

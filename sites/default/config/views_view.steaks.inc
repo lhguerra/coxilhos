@@ -27,6 +27,13 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['style_plugin'] = 'list';
 $handler->display->display_options['row_plugin'] = 'fields';
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['empty'] = TRUE;
+$handler->display->display_options['header']['area']['content'] = 'Esta é a galeria dos <strong>cortes oferecidos</strong> pela Coxilhos. Postaremos <strong>semanalmente</strong> um corte novo aqui e na nossa <a href="http://facebook.com/coxilhos">página no Facebook</a>. Lembramos que nossas opções de cardápio <strong>não estão</strong> restritas ao conteúdo desta página e que estamos sempre <strong>abertos a ideias e sugestões</strong> de nossa clientela.';
+$handler->display->display_options['header']['area']['format'] = 'filtered_html';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
