@@ -55,6 +55,7 @@ $optional = array(
   'field.entityform.field_email.or_amento_e_contato' => 'field.entityform.field_email.or_amento_e_contato',
   'field.entityform.field_message.or_amento_e_contato' => 'field.entityform.field_message.or_amento_e_contato',
   'field.entityform.field_veggies.or_amento_e_contato' => 'field.entityform.field_veggies.or_amento_e_contato',
+  'field.entityform.field_buffet.or_amento_e_contato' => 'field.entityform.field_buffet.or_amento_e_contato',
 );
 
 $modules = array(

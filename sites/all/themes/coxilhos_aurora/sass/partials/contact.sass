@@ -23,6 +23,9 @@ input, textarea
   box-sizing: border-box
   font-family: $font-text
 
+  &.error
+    opacity: 0.5
+
 #edit-submit
   background-color: $light-orange
   color: $white
@@ -36,7 +39,8 @@ input, textarea
   +breakpoint($smallest-width)
     font-size: $font-size-h4
 
-#edit-field-veggies-und
+#edit-field-veggies-und,
+#edit-field-buffet-und
   > div:first-child,
   input
     display: none
