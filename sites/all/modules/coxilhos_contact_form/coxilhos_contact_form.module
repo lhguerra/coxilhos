@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Coxilhos Contact Form feature.
+ */
+
+include_once 'coxilhos_contact_form.features.inc';
