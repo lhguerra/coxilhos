@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'colorbox_style',
   'content' => 'plain',
+  'name' => 'colorbox_style',
 );
 
 $dependencies = array();

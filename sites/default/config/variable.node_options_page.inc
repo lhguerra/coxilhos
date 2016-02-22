@@ -7,10 +7,10 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'node_options_page',
   'content' => array(
     0 => 'status',
   ),
+  'name' => 'node_options_page',
 );
 
 $dependencies = array();

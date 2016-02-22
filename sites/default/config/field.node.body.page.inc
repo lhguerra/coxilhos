@@ -8,41 +8,36 @@ $api = '2.0.0';
 
 $data = array(
   'field_config' => array(
+    'active' => '1',
+    'cardinality' => '1',
+    'columns' => array(
+      'format' => array(
+        'length' => 255,
+        'not null' => FALSE,
+        'type' => 'varchar',
+      ),
+      'summary' => array(
+        'not null' => FALSE,
+        'size' => 'big',
+        'type' => 'text',
+      ),
+      'value' => array(
+        'not null' => FALSE,
+        'size' => 'big',
+        'type' => 'text',
+      ),
+    ),
+    'deleted' => '0',
     'entity_types' => array(
       0 => 'node',
     ),
-    'translatable' => '0',
-    'settings' => array(),
-    'storage' => array(
-      'type' => 'field_sql_storage',
-      'settings' => array(),
-      'module' => 'field_sql_storage',
-      'active' => '1',
-      'details' => array(
-        'sql' => array(
-          'FIELD_LOAD_CURRENT' => array(
-            'field_data_body' => array(
-              'value' => 'body_value',
-              'summary' => 'body_summary',
-              'format' => 'body_format',
-            ),
-          ),
-          'FIELD_LOAD_REVISION' => array(
-            'field_revision_body' => array(
-              'value' => 'body_value',
-              'summary' => 'body_summary',
-              'format' => 'body_format',
-            ),
-          ),
-        ),
-      ),
-    ),
+    'field_name' => 'body',
     'foreign keys' => array(
       'format' => array(
-        'table' => 'filter_format',
         'columns' => array(
           'format' => 'format',
         ),
+        'table' => 'filter_format',
       ),
     ),
     'indexes' => array(
@@ -50,72 +45,77 @@ $data = array(
         0 => 'format',
       ),
     ),
-    'field_name' => 'body',
-    'type' => 'text_with_summary',
-    'module' => 'text',
-    'active' => '1',
     'locked' => '0',
-    'cardinality' => '1',
-    'deleted' => '0',
-    'columns' => array(
-      'value' => array(
-        'type' => 'text',
-        'size' => 'big',
-        'not null' => FALSE,
+    'module' => 'text',
+    'settings' => array(),
+    'storage' => array(
+      'active' => '1',
+      'details' => array(
+        'sql' => array(
+          'FIELD_LOAD_CURRENT' => array(
+            'field_data_body' => array(
+              'format' => 'body_format',
+              'summary' => 'body_summary',
+              'value' => 'body_value',
+            ),
+          ),
+          'FIELD_LOAD_REVISION' => array(
+            'field_revision_body' => array(
+              'format' => 'body_format',
+              'summary' => 'body_summary',
+              'value' => 'body_value',
+            ),
+          ),
+        ),
       ),
-      'summary' => array(
-        'type' => 'text',
-        'size' => 'big',
-        'not null' => FALSE,
-      ),
-      'format' => array(
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => FALSE,
-      ),
+      'module' => 'field_sql_storage',
+      'settings' => array(),
+      'type' => 'field_sql_storage',
     ),
+    'translatable' => '0',
+    'type' => 'text_with_summary',
   ),
   'field_instance' => array(
-    'label' => 'Body',
-    'widget' => array(
-      'type' => 'text_textarea_with_summary',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => '0',
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => '1',
       ),
-      'weight' => -4,
-      'module' => 'text',
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
     ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'type' => 'text_default',
-        'weight' => '1',
-        'settings' => array(),
-        'module' => 'text',
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
       ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'type' => 'text_summary_or_trimmed',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'module' => 'text',
-        'weight' => 0,
-      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -4,
     ),
-    'required' => FALSE,
-    'description' => '',
-    'field_name' => 'body',
-    'entity_type' => 'node',
-    'bundle' => 'page',
-    'deleted' => '0',
-    'default_value' => NULL,
   ),
 );
 

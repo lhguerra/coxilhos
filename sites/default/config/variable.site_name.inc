@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'site_name',
   'content' => 'Coxilhos',
+  'name' => 'site_name',
 );
 
 $dependencies = array();

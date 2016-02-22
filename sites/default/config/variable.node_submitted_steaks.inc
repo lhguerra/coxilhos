@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'node_submitted_steaks',
   'content' => 0,
+  'name' => 'node_submitted_steaks',
 );
 
 $dependencies = array();

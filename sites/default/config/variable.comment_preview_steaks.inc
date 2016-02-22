@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'comment_preview_steaks',
   'content' => '1',
+  'name' => 'comment_preview_steaks',
 );
 
 $dependencies = array();

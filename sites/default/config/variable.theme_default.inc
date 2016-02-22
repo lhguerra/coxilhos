@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'theme_default',
   'content' => 'coxilhos_aurora',
+  'name' => 'theme_default',
 );
 
 $dependencies = array();

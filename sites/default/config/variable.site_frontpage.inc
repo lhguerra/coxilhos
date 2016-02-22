@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'site_frontpage',
   'content' => 'eform/submit/or-amento-e-contato',
+  'name' => 'site_frontpage',
 );
 
 $dependencies = array();

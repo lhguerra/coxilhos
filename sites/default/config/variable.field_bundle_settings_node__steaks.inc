@@ -7,13 +7,23 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'field_bundle_settings_node__steaks',
   'content' => array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '3',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
       ),
+    ),
+    'view_modes' => array(
       'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -25,25 +35,15 @@ $data = array(
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'revision' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'metatags' => array(
-          'weight' => '3',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-      ),
-      'display' => array(),
     ),
   ),
+  'name' => 'field_bundle_settings_node__steaks',
 );
 
 $dependencies = array();

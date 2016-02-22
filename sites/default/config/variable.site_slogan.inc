@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'site_slogan',
   'content' => 'Tradicional churrasco gaúcho a domicílio.',
+  'name' => 'site_slogan',
 );
 
 $dependencies = array();

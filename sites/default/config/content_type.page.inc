@@ -7,13 +7,13 @@
 $api = '2.0.0';
 
 $data = (object) array(
-  'type' => 'page',
-  'name' => 'Basic page',
+  'base' => 'node_content',
   'description' => 'Use <em>basic pages</em> for your static content, such as an \'About us\' page.',
   'has_title' => '1',
-  'title_label' => 'Title',
-  'base' => 'node_content',
   'help' => '',
+  'name' => 'Basic page',
+  'title_label' => 'Title',
+  'type' => 'page',
 );
 
 $dependencies = array(
@@ -25,10 +25,10 @@ $dependencies = array(
 $optional = array(
   'field.node.body.page' => 'field.node.body.page',
   'permission.create_page_content' => 'permission.create_page_content',
-  'permission.edit_own_page_content' => 'permission.edit_own_page_content',
-  'permission.edit_any_page_content' => 'permission.edit_any_page_content',
-  'permission.delete_own_page_content' => 'permission.delete_own_page_content',
   'permission.delete_any_page_content' => 'permission.delete_any_page_content',
+  'permission.delete_own_page_content' => 'permission.delete_own_page_content',
+  'permission.edit_any_page_content' => 'permission.edit_any_page_content',
+  'permission.edit_own_page_content' => 'permission.edit_own_page_content',
 );
 
 $modules = array(

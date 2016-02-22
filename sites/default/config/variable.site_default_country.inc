@@ -7,8 +7,8 @@
 $api = '2.0.0';
 
 $data = array(
-  'name' => 'site_default_country',
   'content' => 'BR',
+  'name' => 'site_default_country',
 );
 
 $dependencies = array();
