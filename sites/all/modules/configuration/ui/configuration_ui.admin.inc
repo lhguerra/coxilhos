@@ -317,7 +317,7 @@ function configuration_ui_config_status($component) {
           $status[$id] = t('Active Store Only');
         }
         elseif ($hash != $item['hash']) {
-          $status[$id] = t('Overriden');
+          $status[$id] = t('Overridden');
         }
         else {
           $status[$id] = t('In Sync');
@@ -589,13 +589,28 @@ function configuration_ui_sync_form($form, &$form_state) {
     '#value' => t('Synchronize configurations'),
     '#submit' => array('configuration_sync_configurations_submit'),
   );
+  $form['configuration_ops']['include_dependencies'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Process component dependencies.'),
+    '#default_value' => TRUE,
+  );
+  $form['configuration_ops']['include_optionals'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Process component optionals.'),
+    '#default_value' => TRUE,
+  );
   $form['configuration_ops']['preserve_tracked'] = array(
     '#type' => 'checkbox',
     '#title' => t('Preserve tracked configurations.'),
     '#description' => '<p>' . t('If checked, all the configurations current being tracked will still be tracked even if they are not in listed in the tracked.inc file of your DataStore. If not checked, those configurations that are not listed in the configuration.inc file and are currently being tracked will be automatically untracked.') . '<p>',
     '#default_value' => TRUE,
   );
-
+  $form['configuration_ops']['only_modified'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Process only modified trackeds.'),
+    '#description' => '<p>' . t('If checked, only configurations with modified hash are updated. If not checked, all configurations in tracked file or tracking are updated.') . '<p>',
+    '#default_value' => TRUE,
+  );
   return $form;
 }
 
@@ -701,7 +716,7 @@ function configuration_sync_configurations_submit($form, &$form_state) {
 
   }
 
-  // If we have to stop stracking some configurations, figure out which
+  // If we have to stop tracking some configurations, figure out which
   // configurations have to be untracked.
   if (empty($form_state['values']['preserve_tracked'])) {
 
@@ -718,7 +733,10 @@ function configuration_sync_configurations_submit($form, &$form_state) {
     }
   }
 
-  $results = ConfigurationManagement::importToActiveStore($to_track, FALSE, FALSE, TRUE);
+  $include_dependencies = $form_state['values']['include_dependencies'];
+  $include_optionals = $form_state['values']['include_optionals'];
+  $only_modified = $form_state['values']['include_optionals'];
+  $results = ConfigurationManagement::importToActiveStore($to_track, $include_dependencies, $include_optionals, TRUE, NULL, $only_modified);
   foreach ($results->getInfo('imported') as $imported) {
     drupal_set_message(t('Imported %config', array('%config' => $imported)));
   }

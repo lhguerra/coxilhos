@@ -139,6 +139,7 @@ function configuration_drush_command() {
     'examples' => array(
       'drush config-sync' => 'Enable all the required modules and the configurations defined in tracked.inc',
       'drush config-sync --preserve-tracked' => 'Will keep tracking the previous configurations even if they are not listed in the tracked.inc',
+      'drush config-sync --only-modified' => 'Will update only configurations with different hash in storage and add news configurations',
       'drush csyn --source=%site/myconfig' => 'Synchronize configurations from drupal/sites/example.com/myconfig/tracked.inc',
       'drush csyn --source=myconfig' => 'Synchronize configurations from drupal/myconfig/tracked.inc',
       'drush csyn --source=/path/to/myconfig' => 'Synchronize configurations from /path/to/myconfig/tracked.inc',
@@ -146,6 +147,7 @@ function configuration_drush_command() {
     'options' => array(
       'source' => 'import all the configurations from a given directory.',
       'preserve-tracked' => 'By default, all configurations that are not listed on the tracked.inc file are automatically untracked. Using this options avoid remove the already being tracked configurations.',
+      'only-modified' => 'By default, all configurations in tracked will update in database. Using this option only modified configurations will update',
     ),
   );
   return $items;
@@ -213,19 +215,17 @@ function _configuration_get_tracked() {
     'Hash',
   );
   //get tracked file
-  $tracked = ConfigurationManagement::trackedConfigurations();
+  $tracked = ConfigurationManagement::trackedConfigurations(FALSE);
   //format the result
-  foreach ($tracked as $component => $list) {
-    foreach ($list as $identifier => $hash) {
-      //check status
-      $configuration = ConfigurationManagement::createConfigurationInstance($component);
-      $content[] = array(
-        'component' => $component,
-        'identifier' => $identifier,
-        'status' => $configuration->getStatus(),
-        'hash' => $hash,
-      );
-    }
+  foreach ($tracked as $component => $info) {
+    //check status
+    $configuration = ConfigurationManagement::createConfigurationInstance($component);
+    $content[] = array(
+      'component' => $configuration->getComponent(),
+      'identifier' => $configuration->getIdentifier(),
+      'status' => $configuration->getStatus(),
+      'hash' => $info['hash'],
+    );
   }
   if (empty($content)) {
     return drush_print('No tracked components');
@@ -438,9 +438,9 @@ function _configuration_sync() {
 
   }
 
-  // If we have to stop stracking some configurations, figure out which
+  // If we have to stop tracking some configurations, figure out which
   // configurations have to be untracked.
-  if (drush_get_option('preserve-tracked')) {
+  if (!drush_get_option('preserve-tracked')) {
 
     $being_tracked = array_keys(ConfigurationManagement::trackedConfigurations(FALSE));
 
@@ -455,7 +455,8 @@ function _configuration_sync() {
     }
   }
 
-  $results = ConfigurationManagement::importToActiveStore($to_track, FALSE, FALSE, TRUE);
+  // The last param is to update only track modified.
+  $results = ConfigurationManagement::importToActiveStore($to_track, FALSE, FALSE, TRUE, NULL, drush_get_option('only-modified'));
   foreach ($results->getInfo('imported') as $imported) {
     drush_log(dt('Imported !config', array('!config' => $imported)), 'ok');
   }

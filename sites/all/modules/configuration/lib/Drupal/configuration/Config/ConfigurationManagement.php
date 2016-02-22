@@ -251,11 +251,13 @@ class ConfigurationManagement {
    *   If TRUE, after import the configuration, it will be also tracked.
    * @param $source
    *   Optional. An optional path to load configurations.
+   * @param boolean $only_modified
+   *   If TRUE, only configurations with modified md5 are updated.
    * @return ConfigIteratorSettings
    *   An ConfigIteratorSettings object that contains the imported
    *   configurations.
    */
-  static public function importToActiveStore($list = array(), $import_dependencies = TRUE, $import_optionals = TRUE, $start_tracking = FALSE, $source = NULL) {
+  static public function importToActiveStore($list = array(), $import_dependencies = TRUE, $import_optionals = TRUE, $start_tracking = FALSE, $source = NULL, $only_modified = FALSE) {
     $excluded = static::excludedConfigurations();
     $settings = new ConfigIteratorSettings(
       array(
@@ -276,11 +278,17 @@ class ConfigurationManagement {
       )
     );
 
+    if ($only_modified) {
+      $track_list = static::modifiedComponentsIds();
+    } else {
+      $track_list = $list;
+    }
+
     module_invoke_all('configuration_pre_import', $settings);
 
     $handlers = static::getConfigurationHandler();
 
-    foreach ($list as $component) {
+    foreach ($track_list as $component) {
       if (in_array($component, $excluded)) {
         continue;
       }
@@ -523,6 +531,37 @@ class ConfigurationManagement {
     $list = array_filter($list, 'strlen');
 
     return $list;
+  }
+
+  /**
+   * Return a list of modifieds components's IDs
+   * This function compare md5 in tracked file with md5 in storage
+   * @return array
+   *
+   * The structured in the this way:
+   * @code
+   *     array(
+   *       0 => 'content_type.article',
+   *       1 => 'file_display.video__video_menu__media_vimeo_image',
+   *     )
+   * @endcode
+   */
+  static public function modifiedComponentsIds() {
+    $tracked = ConfigurationManagement::trackedConfigurations(FALSE);
+    $tracking_file = ConfigurationManagement::readTrackingFile();
+    $only_modified = array();
+    // Foreach to compare hash
+    foreach ($tracked as $component_id => $info) {
+      if (array_key_exists($component_id, $tracking_file['tracked']) && $tracking_file['tracked'][$component_id] != $info['hash'])
+      {
+        $only_modified[] = $component_id;
+      }
+    }
+    // Add the news tracked's configuration in array to tracked.
+    $diff = array_diff(array_keys($tracking_file['tracked']), array_keys($tracked));
+    $only_modified = array_merge($only_modified, $diff);
+
+    return $only_modified;
   }
 
   /**
