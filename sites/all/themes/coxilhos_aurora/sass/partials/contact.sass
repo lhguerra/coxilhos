@@ -1,4 +1,4 @@
-#or-amento-e-contato-entityform-edit-form
+[id^=or-amento-e-contato-entityform-edit-form]
   .description
     line-height: 2
 
@@ -26,9 +26,10 @@ input, textarea
   &.error
     opacity: 0.5
 
-#edit-submit
+[id^=edit-submit]
   background-color: $light-orange
   color: $white
+  cursor: pointer
 
 .form-required
   color: $beige
@@ -39,8 +40,8 @@ input, textarea
   +breakpoint($smallest-width)
     font-size: $font-size-h4
 
-#edit-field-veggies-und,
-#edit-field-buffet-und
+[id^=edit-field-veggies-und],
+[id^=edit-field-buffet-und]
   > div:first-child,
   input
     display: none
