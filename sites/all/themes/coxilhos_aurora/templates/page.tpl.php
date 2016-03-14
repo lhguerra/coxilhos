@@ -90,6 +90,7 @@
 
 <?php if ($page['content']): ?>
   <main id="main" role="main">
+    <?php print render($messages); ?>
     <?php print render($page['content']); ?>
   </main>
 <?php endif; ?>
