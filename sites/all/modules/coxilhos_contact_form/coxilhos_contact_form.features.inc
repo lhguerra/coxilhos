@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function coxilhos_contact_form_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_entityform_type().
  */
 function coxilhos_contact_form_default_entityform_type() {
@@ -29,7 +38,7 @@ function coxilhos_contact_form_default_entityform_type() {
         "value" : "Sua mensagem foi enviada.\\r\\nEm breve retornaremos o contato.",
         "format" : "filtered_html"
       },
-      "submission_show_submitted" : 1,
+      "submission_show_submitted" : 0,
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
