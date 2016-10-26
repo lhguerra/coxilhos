@@ -1,9 +1,6 @@
 // Coxilhos footer styles.
 
 footer
-  +container()
-  background-color: $dark-orange
-  padding: 1rem 0
   clear: both
 
   p
@@ -18,3 +15,25 @@ footer
 
   &:hover
     text-decoration: none
+
+#coxilhos-footer
+  background-image: url('../img/footer.jpg')
+  background-position: center
+  background-size: cover
+
+#coxilhos-footer-wrapper
+  +container()
+  padding: 4rem 0
+  background-color: $transluscent-dark-orange
+
+#coxilhos-footer-container
+  +span(isolate 14 at 6)
+
+  +breakpoint($big-width)
+    +span(isolate 16 at 5)
+
+  +breakpoint($small-width)
+    +span(isolate 18 at 4)
+
+  +breakpoint($smallest-width)
+    +span(isolate 20 at 3)
