@@ -114,7 +114,7 @@
         2015 - Coxilhos - Tradicional churrasco gaúcho a domicílio em Florianópolis - SC.
       </p>
       <p>
-        Entre em contato: 48 9933 0349 / 48 8834 2412.
+        Entre em contato: 048 999 330 349.
       </p>
       <a href="http://facebook.com/coxilhos/" class="facebook-page-icon"></a>
     </div>
